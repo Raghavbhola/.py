@@ -671,4 +671,35 @@ print("------------------------------------------")
 c2 = child()
 print(c2.child_method())
 print(c2.parent_method())
-print(c2.grandparent_method())         
+print(c2.grandparent_method())
+
+#-----------------------------------
+class Grandparent:
+    def grandparent_method(Self):
+        return"Grandparent class"
+
+class Parent(Grandparent):
+    def parent_method(self):
+        return"parent class"
+
+class child(Parent):
+    def child_method(self):
+        return"child class"
+
+class Futurechild(child):
+    def future_child_method(self):
+        return"future child class"
+    
+c1 = Futurechild()
+print(c1.future_child_method())
+print(c1.child_method())
+print(c1.parent_method())
+print(c1.grandparent_method())
+print("------------------------------------------")
+
+c2 = child()
+print(c2.child_method())
+print(c2.parent_method())
+print(c2.grandparent_method())
+
+#(4)Hierarchinal Inheritance:->
