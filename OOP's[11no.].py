@@ -703,3 +703,27 @@ print(c2.parent_method())
 print(c2.grandparent_method())
 
 #(4)Hierarchinal Inheritance:->
+class Parent:
+    def parent_method(self):
+        return"This is a method in the parent class"     
+
+class child1(Parent):
+    def child1_method(self):
+        return"This is a method in the child1 class"
+
+class child2(Parent):
+    def child2_method(self):
+        return"This is a method in the child2 class" 
+
+class child3(Parent):
+    def child3_method(self):
+        return"This is a method in the child3 class" 
+
+c1 = child1()
+c2 = child2()
+c3 = child3()
+
+print(c1.parent_method())
+print(c2.child2_method())
+print(c3.child3_method())
+print(c2.child2_method())
