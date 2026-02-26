@@ -756,3 +756,6 @@ print(i1.child_method())
 print(i1.method_ceo())
 print(i1.method_manager())
 print(i1.method_employee())                
+
+#Super() Function:-> It is used to call a method from the parent class in the child  class. it is used to avoid the ambiguity of method names in multiple inheritance.
+#                    It will strictly follow the MRO (Method Resolution Order) to call the method from the parent class.
