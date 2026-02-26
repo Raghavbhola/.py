@@ -731,3 +731,28 @@ print(c2.child2_method())
 print("-------------------------------------")
 print(c3.parent_method())
 print(c3.child3_method())
+
+
+#Hybrid Inheritance:-> A combination of two or more types of inheritance.
+
+class CEO:
+    def method_ceo(self):
+        return"This is method 1 from CEO"
+
+class Manager(CEO):
+    def method_manager(self):
+        return"This is method 2 from Manager"
+
+class Employee(CEO):
+    def method_employee(self):
+        return"This is method 3 from Employee"
+
+class Intern(Employee,Manager):
+    def child_method(self):
+        return"This is a method in the child class"
+
+i1 = Intern()
+print(i1.child_method())
+print(i1.method_ceo())
+print(i1.method_manager())
+print(i1.method_employee())                
