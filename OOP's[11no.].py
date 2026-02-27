@@ -759,3 +759,26 @@ print(i1.method_employee())
 
 #Super() Function:-> It is used to call a method from the parent class in the child  class. it is used to avoid the ambiguity of method names in multiple inheritance.
 #                    It will strictly follow the MRO (Method Resolution Order) to call the method from the parent class.
+
+class A:
+    def method (self):
+        print("This is method from class A")
+        super().method()
+
+class B (A):
+    def method(self):
+        print("This is method from class B")
+        super().method()
+
+class C (A):
+    def method(self):
+        print("This is method from class C")
+        super().method()
+
+class D (B,C):
+    def method(self):
+        print("This is method from class D")
+        super().method()
+
+d1 = D()
+d1.method()
