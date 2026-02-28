@@ -7,3 +7,24 @@
 #2. Operator Overloading - When a operator is used with different types of objects, it behaves differently based on the type of object.
 #3. Function Overloading - When a function is defined with the same name but different parameters, it is called function overloading. Python does not support function overloading, but we can achieve it by using default parameters or variable length arguments.
 #4. Duck typing - When the type of an object is determined by its behavior rather than its class. It is based on the principle of "If it looks like a duck and quacks like a duck, then it is a duck". It allows us to use objects of different classes in the same way if they have the same behavior.
+
+#(1)Duck Typing:->
+class duck:
+    def quack(self):
+        return"Quack Quack"
+    def fly (self):
+        return"I am flying"
+
+class AnotherBird:
+    def quack(self):
+        return"I am not a duck but I can quack like a duck"
+    def fly(self):
+        return"I am flying too"
+    def makeSound(bird):
+        print(bird.quack())
+        print(bird.fly())
+
+duck1 = duck()
+bird1 = AnotherBird()
+AnotherBird.makeSound(bird1)
+AnotherBird.makeSound(duck1)
