@@ -28,3 +28,34 @@ duck1 = duck()
 bird1 = AnotherBird()
 AnotherBird.makeSound(bird1)
 AnotherBird.makeSound(duck1)
+
+
+class Dog:
+    def sound(self):
+        return "Bark"
+    def scratch(self):
+        return"Fetching the ball"
+class cat:
+    def sound(self):
+        return"Meow"
+    def scratch(self):
+        return"Scratching the furniture"
+    def animal_sound(self):
+        print(self.sound())
+        print(self.scratch())
+
+class Human:
+    def sound(self):
+        return"Hello"
+    def scratch(self):
+        return"Typing on the keyboard"
+    def Human_method(self):
+        print(self.sound())
+        print(self.scratch())
+
+c1 = cat()
+d1 = Dog()
+h1 = Human()
+Human.Human_method(d1)
+Human.Human_method(c1)
+Human.Human_method(h1)
