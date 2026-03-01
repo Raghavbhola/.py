@@ -763,7 +763,7 @@ print(i1.method_employee())
 class A:
     def method (self):
         print("This is method from class A")
-        super().method()
+        #super().method()
 
 class B (A):
     def method(self):
