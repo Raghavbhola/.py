@@ -104,3 +104,18 @@ class KunalClass(demoInformalInterface):
 obj = KunalClass()
 obj.method1()       #This will work because method1 is implemented
 obj.method2()       #This will work because method2 is implemented
+
+#Packages and Modules:- A package is a collection of modules, and a module is a file that contains Python code.
+#                       A module can contain functions, classes, and variables. A package can contain sub-packages and modules. 
+#                       In Python, we can use the import statement to import modules and packages.
+
+#Inner Classes:- An inner class is a class that is defined inside another class. An inner class can access the members of the outer class, and it can also have its own members. 
+#               Inner classes are used to logically group classes that are only used in one place, and they can also be used to hide the implementation details of a class.
+
+#2 types of inner classes in python:-
+#1st in multiple inner classes, we can have multiple inner classes inside an outer class. Each inner class can have its own members and methods, and they can also access the members of the outer class.
+#2nd in multilevel inner classes, we can have inner classes inside inner classes. This allows us to create a hierarchy of classes that can access the members of the outer classes. 
+
+#Anonymous class and objects:- An anonymous class is a class that is defined without a name. An anonymous object is an instance of an anonymous class. 
+#                              Anonymous classes and objects are used when we need to create a class or an object that is only used once, and we do not want to give it a name. 
+#                              In Python, we can use the lambda function to create anonymous functions, and we can use the type function to create anonymous classes.
