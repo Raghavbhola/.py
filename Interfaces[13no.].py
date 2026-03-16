@@ -119,3 +119,13 @@ obj.method2()       #This will work because method2 is implemented
 #Anonymous class and objects:- An anonymous class is a class that is defined without a name. An anonymous object is an instance of an anonymous class. 
 #                              Anonymous classes and objects are used when we need to create a class or an object that is only used once, and we do not want to give it a name. 
 #                              In Python, we can use the lambda function to create anonymous functions, and we can use the type function to create anonymous classes.
+
+class calculator:
+    def __init__(self):
+        self.result = 50
+        return
+c1 = calculator() 
+print("Class of int",type(int))
+print("Class of object",type(c1))
+print("Class of class",type(calculator))
+print("Class of Lambda",type(list()))   
