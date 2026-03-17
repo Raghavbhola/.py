@@ -134,6 +134,29 @@ print("Class of Lambda",type(list()))
 #wrapper class:- A wrapper class is a class that is used to wrap another class. A wrapper class can be used to add additional functionality to a class, or it can be used to modify the behavior of a class. 
 #               In Python, we can use the decorator pattern to create wrapper classes.
 
+def wrapper(class_to_wrap):
+    class WrapperClass:
+        def __init__(self,name, *args, **kwargs):
+            self.wrapped_instance = class_to_wrap(name, *args, **kwargs)
+
+        def getattr(self, name):
+            return getattr(self.wrapped_instance, name)
+    return WrapperClass
+
+@wrapper
+class MyClass:
+    def __init__(self, x, *args, **kwargs):
+        self.name = x
+
+obj = MyClass("Kunal")
+print(obj.wrapped_instance.name) # Output: Kunal
+obj1 = MyClass("Raghav", 20)
+print(obj1.wrapped_instance.name) # Output: Raghav
+obj2 = MyClass("Raghav", 20, 30)
+print(obj2.wrapped_instance.name) # Output: Raghav
+obj3 = MyClass("Raghav", 20, 30, 40, age = 25, gender = "Male")
+print(obj3.wrapped_instance.name) # Output: Raghav
+            
 
 #Singleton class:- A singleton class is a class that can only have one instance. A singleton class is used when we want to ensure that there is only one instance of a class, and we want to provide a global point of access to that instance. 
 #                  In Python, we can use the __new__ method to create a singleton class.
