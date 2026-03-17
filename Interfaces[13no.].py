@@ -129,3 +129,25 @@ print("Class of int",type(int))
 print("Class of object",type(c1))
 print("Class of class",type(calculator))
 print("Class of Lambda",type(list()))   
+
+
+#wrapper class:- A wrapper class is a class that is used to wrap another class. A wrapper class can be used to add additional functionality to a class, or it can be used to modify the behavior of a class. 
+#               In Python, we can use the decorator pattern to create wrapper classes.
+
+
+#Singleton class:- A singleton class is a class that can only have one instance. A singleton class is used when we want to ensure that there is only one instance of a class, and we want to provide a global point of access to that instance. 
+#                  In Python, we can use the __new__ method to create a singleton class.
+
+#WAP to make a DB connection class a singleton class.
+
+#CRUD operations:- CRUD stands for Create, Read, Update, and Delete. CRUD operations are the basic operations that can be performed on a database. 
+#                  In Python, we can use the sqlite3 module to perform CRUD operations on a SQLite database.
+
+#Enum:- Enum is a data type that consists of a set of named values. An enum can be used to represent a fixed set of constants, such as the days of the week, the months of the year, or the colors of the rainbow. 
+#       In Python, we can use the enum module to create enums.
+
+#Data classes:- A data class is a class that is used to store data. A data class is a simple class that has no behavior, and it is used to represent a data structure. 
+#               In Python, we can use the dataclasses module to create data classes.
+#               it helps for automatically generating special methods like __init__, __repr__, __eq__, etc. for a class. This can save us a lot of time and effort when we need to create classes that are primarily used to store data. 
+#               For example, we can create a data class to represent a point in 2D space:
+
