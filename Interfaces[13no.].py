@@ -196,3 +196,18 @@ print(p3)
 print(p1.name)      #kunal
 print(p2.age)       #34
 print(p1 == p2)     #False
+
+#(2)--------------->
+#dataclass with mutable field:
+from dataclasses import dataclass, field 
+
+@dataclass
+class PythonClasses:
+    name : str
+    age : int
+    student_indo : list = field(default_factory = list)
+
+p1 = PythonClasses("Kunal",25)
+p1.student_indo.append("Student1")
+print(p1)
+
