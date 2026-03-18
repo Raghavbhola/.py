@@ -150,12 +150,12 @@ class MyClass:
 
 obj = MyClass("Kunal")
 print(obj.wrapped_instance.name) # Output: Kunal
-obj1 = MyClass("Raghav", 20)
-print(obj1.wrapped_instance.name) # Output: Raghav
-obj2 = MyClass("Raghav", 20, 30)
-print(obj2.wrapped_instance.name) # Output: Raghav
-obj3 = MyClass("Raghav", 20, 30, 40, age = 25, gender = "Male")
-print(obj3.wrapped_instance.name) # Output: Raghav
+obj1 = MyClass("Krishna", 20)
+print(obj1.wrapped_instance.name) # Output: Krishna
+obj2 = MyClass("Satyam", 20, 30)
+print(obj2.wrapped_instance.name) # Output: Satyam
+obj3 = MyClass("shivam", 20, 30, 40, age = 25, gender = "Male")
+print(obj3.wrapped_instance.name) # Outpput: shivam
             
 
 #Singleton class:- A singleton class is a class that can only have one instance. A singleton class is used when we want to ensure that there is only one instance of a class, and we want to provide a global point of access to that instance. 
@@ -174,3 +174,25 @@ print(obj3.wrapped_instance.name) # Output: Raghav
 #               it helps for automatically generating special methods like __init__, __repr__, __eq__, etc. for a class. This can save us a lot of time and effort when we need to create classes that are primarily used to store data. 
 #               For example, we can create a data class to represent a point in 2D space:
 
+#(1)-------------------->
+from dataclasses import dataclass
+
+@dataclass
+class PythonClasses:
+    name : str
+    age : int
+    attendence : float= 0.0
+    gender : str = "Not specified"
+
+p1 = PythonClasses("Kunal",25, 90.5, "Male")
+print(p1)
+p2 = PythonClasses("Yashika", 34, 89.0,"Female")
+print(p2)
+p3 = PythonClasses("Akash", 28)
+print(p3)
+p4 = PythonClasses("Anjali", 27, 92.0)
+print(p3)
+
+print(p1.name)      #kunal
+print(p2.age)       #34
+print(p1 == p2)     #False
