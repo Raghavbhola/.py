@@ -20,3 +20,37 @@
 #                            --> shared resource managment amoung threads
 #     (5)Termination:--> task complete
 #                      or  with an execption. 
+
+import threading
+from threading import Thread
+import time
+
+def add_numbers(a,b):
+    time.sleep(1)    #1sec. time limit
+    result = a + b
+    print(f"The sum of {a} and {b} is: {result}")
+
+def basic_func():
+    print("Basic function is running currently...")
+
+def subtract_numbers(a,b):
+    time.sleep(12)    
+    result = a-b
+    print(f"The difference of {a} and {b} is: {result}")
+
+def multiple_numbers(a,b):
+    time.sleep(8)
+    result = a*b
+    print(f"The product of {a} and {b} is: {result}")
+
+def cube_numbers(a):
+    time.sleep(3)
+    result = a**3
+    print(f"The cube of {a} is: {result}")
+
+Thread(target = add_numbers, args=[5,3]).start()
+Thread(target = subtract_numbers,args=(5,3)).start()
+Thread(target = multiple_numbers,args=(5,3)).start()
+Thread(target = cube_numbers,args=(5,3)).start()
+Thread(target = basic_func).start()
+exitflag = 0
