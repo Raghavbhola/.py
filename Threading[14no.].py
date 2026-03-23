@@ -21,6 +21,7 @@
 #     (5)Termination:--> task complete
 #                      or  with an execption. 
 
+#(1)--------------->
 import threading
 from threading import Thread
 import time
@@ -54,3 +55,5 @@ Thread(target = multiple_numbers,args=(5,3)).start()
 Thread(target = cube_numbers,args=(5,3)).start()
 Thread(target = basic_func).start()
 exitflag = 0
+
+#(2)---------------->
