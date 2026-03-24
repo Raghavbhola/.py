@@ -49,11 +49,40 @@ def cube_numbers(a):
     result = a**3
     print(f"The cube of {a} is: {result}")
 
-Thread(target = add_numbers, args=[5,3]).start()
+Thread(target = add_numbers, args=(5,3)).start()
 Thread(target = subtract_numbers,args=(5,3)).start()
 Thread(target = multiple_numbers,args=(5,3)).start()
-Thread(target = cube_numbers,args=(5,3)).start()
+Thread(target = cube_numbers,args=(5,)).start()
 Thread(target = basic_func).start()
 exitflag = 0
 
 #(2)---------------->
+import time
+import threading
+from threading import Thread
+
+exitflag = 0
+class KunalThread(Thread):
+    def __init__(self, threadID, name, counter):
+        Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+
+    def run(self):
+        print(f"starting thread : {self.name}")
+        self.print_time(self.counter,2) 
+        print(f"Existing thread: {self.name}")
+
+    def print_time(self, counter, delay):
+        while counter:
+            if exitflag:
+                break
+            time.sleep(delay)
+            print(f"{self.name}: {time.ctime(time.time())}")    
+            counter -=1
+thread1 = KunalThread(1,"Thread-1", 5)
+thread2 = KunalThread(2,"Thread-2",10)
+thread1.start()
+thread2.start()
+print("Existing Main Thread")
