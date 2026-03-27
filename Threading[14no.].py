@@ -86,3 +86,25 @@ thread2 = KunalThread(2,"Thread-2",10)
 thread1.start()
 thread2.start()
 print("Existing Main Thread")
+
+#Joining Threads:- making one thread wait until another finishes execution, ensuring tasks run in the correct order.
+
+import time
+import threading
+from threading import Thread
+
+def myfunction_1(arg1):
+    for i in range(arg1):
+        print(f"Function 1 is running for :{i}")
+        time.sleep(1)
+def myfunction_2(arg1):
+    for i in range(arg1):
+        print(f"Function 2 in running for : {i}")
+        time.sleep(1)
+Thread1 = threading.Thread(target= myfunction_1, args=(10, ))
+thread2 = threading.Thread(target= myfunction_2, args=(10, ))
+Thread1.start()
+Thread1.join(timeout= 5)
+thread2.start()
+thread2.join()
+print("Existing Main Thread")                
