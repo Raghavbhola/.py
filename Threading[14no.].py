@@ -88,7 +88,7 @@ thread2.start()
 print("Existing Main Thread")
 
 #Joining Threads:- making one thread wait until another finishes execution, ensuring tasks run in the correct order.
-
+#(1)------------------
 import time
 import threading
 from threading import Thread
@@ -105,6 +105,22 @@ Thread1 = threading.Thread(target= myfunction_1, args=(10, ))
 thread2 = threading.Thread(target= myfunction_2, args=(10, ))
 Thread1.start()
 Thread1.join(timeout= 5)
+thread2.start()
+thread2.join()
+print("Existing Main Thread")                
+
+#(2)------------------------------------------------------
+import time
+import threading
+from threading import Thread
+
+def myfunction_1(arg1):
+    print(f"Thread Name: {threading.current_thread().name}")
+    time.sleep(1)
+Thread1 = threading.Thread(target= myfunction_1, args=(10, ),name = "LoginThread")
+thread2 = threading.Thread(target= myfunction_1, args=(10, ),name = "SignupThread")
+Thread1.start()
+Thread1.join()
 thread2.start()
 thread2.join()
 print("Existing Main Thread")                
