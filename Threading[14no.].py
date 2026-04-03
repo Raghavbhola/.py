@@ -88,7 +88,7 @@ thread2.start()
 print("Existing Main Thread")
 
 #Joining Threads:- making one thread wait until another finishes execution, ensuring tasks run in the correct order.
-#(1)------------------
+
 import time
 import threading
 from threading import Thread
@@ -109,7 +109,8 @@ thread2.start()
 thread2.join()
 print("Existing Main Thread")                
 
-#(2)------------------------------------------------------
+#Thread naming
+#(1)------------------------------------------------------
 import time
 import threading
 from threading import Thread
@@ -123,4 +124,5 @@ Thread1.start()
 Thread1.join()
 thread2.start()
 thread2.join()
-print("Existing Main Thread")                
+print("Existing Main Thread")    
+            
