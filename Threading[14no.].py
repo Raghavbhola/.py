@@ -125,4 +125,25 @@ Thread1.join()
 thread2.start()
 thread2.join()
 print("Existing Main Thread")    
-            
+
+#
+import time
+import threading
+from threading import Thread
+
+def myfunction_1(arg1):
+    #threading.current_thread().name = "Application Thread"
+    print(f"Thread Name: {threading.current_thread().name}")
+    time.sleep(1)
+
+thread1 = threading.Thread(target= myfunction_1, args=(10, ), name = "LoginThread")
+thread2 = threading.Thread(target= myfunction_1, args=(10, ), name = "SignupThread")
+thread3 = threading.Thread(target= myfunction_1, args=(10, ), name = "ApplicationThread")
+print(" the Thread name is:",threading.current_thread().name)
+thread1.start()
+thread1.join()
+thread2.start()
+thread2.join()
+thread3.start()
+thread3.join()
+print("Existing Main Thread")                            
