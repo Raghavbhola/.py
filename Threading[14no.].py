@@ -126,7 +126,7 @@ thread2.start()
 thread2.join()
 print("Existing Main Thread")    
 
-#
+#(2)-----------------------------------------------
 import time
 import threading
 from threading import Thread
@@ -146,4 +146,31 @@ thread2.start()
 thread2.join()
 thread3.start()
 thread3.join()
-print("Existing Main Thread")                            
+print("Existing Main Thread")        
+
+#Scheduling Threads:- 
+# Way to schedule threads is by using time.sleep() method. It will pause the thread for a specified amount of time.
+
+import time
+import threading
+
+def myfunction_1(name, StartTime):
+    now = time.time()
+    elapsed_time = now - StartTime
+    print(f"Elapsed Time: {elapsed_time}seconds, Name = {name}")
+    time.sleep(1)
+
+start = time.time()
+print("Start",time.ctime(start))
+
+thread1 = threading.Timer(2,myfunction_1, args=("Thread-1",start))
+thread2 = threading.Timer(4,myfunction_1, args=("Thread-1",start))
+thread3 = threading.Thread(target=myfunction_1,args=("Thread-3",start))
+
+thread1.start()
+thread1.join()
+thread2.start()
+thread2.join()
+end = time.time()
+print("End",time.ctime(end))
+print("Existing Main Thread") 
