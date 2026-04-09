@@ -148,6 +148,7 @@ thread3.start()
 thread3.join()
 print("Existing Main Thread")        
 
+#------------------------------
 #Scheduling Threads:- 
 #(1) Way to schedule threads is by using time.sleep() method. It will pause the thread for a specified amount of time.
 
