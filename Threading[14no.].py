@@ -211,3 +211,13 @@ event1 = scheduler.enter(5,1,add_numbers, argument = (15,30))
 print("Event created:", event1)
 scheduler.run()
 print("End time:", datetime.now())
+
+#------------------------------------------------------------------------
+#Thread pools - Its a mechanism to execute multiple threads concurrently. It is a way to manage a pool of worker threads that can be used to execute tasks in parallel. 
+#               The main advantage of using a thread pool is that it can improve the performance of a program by reducing the overhead of creating and destroying threads.
+
+# Multiproccessing.dummy and concurrent.futures.ThreadPoolExecutor are two different ways to create a thread pool in Python. 
+# The main difference between the two is that multiprocessing.dummy is a wrapper around the threading module, while concurrent.futures.
+# ThreadPoolExecutor is a higher-level interface for managing threads.
+# The multiprocessing.dummy module provides a simple way to create a thread pool using the threading module. 
+# It allows you to create a pool of worker threads and submit tasks to be executed by those threads
