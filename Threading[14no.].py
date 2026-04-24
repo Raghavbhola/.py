@@ -194,3 +194,20 @@ scheduler.run()
 end = time.time()
 print("end", time.ctime(end))
 print("Existing Main Thread")
+
+#(3) way....
+from datetime import datetime
+import sched
+import time
+
+def add_numbers(a,b):
+    print("Performing addition...", datetime.now())
+    print("Time :", time.monotonic())
+    print(f"The sum of {a} and {b} is : {a+b}")
+
+scheduler = sched.scheduler()
+print("Start Time:", datetime.now())
+event1 = scheduler.enter(5,1,add_numbers, argument = (15,30))
+print("Event created:", event1)
+scheduler.run()
+print("End time:", datetime.now())
