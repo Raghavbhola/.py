@@ -221,3 +221,23 @@ print("End time:", datetime.now())
 # ThreadPoolExecutor is a higher-level interface for managing threads.
 # The multiprocessing.dummy module provides a simple way to create a thread pool using the threading module. 
 # It allows you to create a pool of worker threads and submit tasks to be executed by those threads
+
+from multiprocessing.dummy import Pool
+import time
+
+def square(x):
+    sqr = x*x
+    time.sleep(1)
+    print(f"The Square of {x} is {sqr}")
+
+def cube(x):
+    cube = x*x*x
+    time.sleep(10)
+    print(f"The cube of {x} is {cube}")
+
+numbers = [1,2,3,4,5]
+pool = Pool(5)
+pool.map(square, numbers)
+pool.map(cube, numbers)
+pool.close()
+pool.join()    
