@@ -222,6 +222,7 @@ print("End time:", datetime.now())
 # The multiprocessing.dummy module provides a simple way to create a thread pool using the threading module. 
 # It allows you to create a pool of worker threads and submit tasks to be executed by those threads
 
+#(1)-------------------------->
 from multiprocessing.dummy import Pool
 import time
 
@@ -242,6 +243,7 @@ pool.map(cube, numbers)
 pool.close()
 pool.join()    
 
+#(2)--------------------------------->
 from concurrent.futures import ThreadPoolExecutor
 from time import sleep
 
