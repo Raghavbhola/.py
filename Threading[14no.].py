@@ -241,3 +241,30 @@ pool.map(square, numbers)
 pool.map(cube, numbers)
 pool.close()
 pool.join()    
+
+from concurrent.futures import ThreadPoolExecutor
+from time import sleep
+
+def square (numbers):
+    for val in numbers:
+        ret = val*val
+        sleep(1)
+        print(f"The square of {val} is {ret}")
+
+def cube (numbers):
+    for val in numbers:
+        ret = val*val*val
+        sleep(1)
+        print(f"The cube of {val} is {ret}")
+
+if __name__ == '__main__':
+    numbers = [1,2,3,4,5]
+    executer = ThreadPoolExecutor(4)
+    thread1 = executer.submit(square,(numbers))
+    thread2 = executer.submit(square,(numbers))
+    print("Thread1 executed? -->",thread1.done())
+    print("Thread2 executed? -->",thread2.done())
+    sleep(10)
+    print("Thread1 executed? -->",thread1.done())
+    print("Thread2 executed? -->",thread2.done())
+
