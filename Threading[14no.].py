@@ -270,3 +270,6 @@ if __name__ == '__main__':
     print("Thread1 executed? -->",thread1.done())
     print("Thread2 executed? -->",thread2.done())
 
+#Main thread - The main thread is the initial thread of execution in a Python program. It is responsible for starting the program and managing the execution of other threads. 
+#              The main thread can create and manage other threads, and it can also perform tasks such as handling user input, managing resources, and coordinating the execution of other threads. 
+#              The main thread is typically the first thread to be created when a Python program starts, and it continues to run until the program terminates.
