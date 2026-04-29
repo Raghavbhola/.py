@@ -307,3 +307,9 @@ for i in range(6):
 
 worker1.join()
 print("Main thread is done")
+
+#Thread synchronization - Thread synchronization is the process of coordinating the execution of multiple threads to ensure that they do not interfere with each other and that they access shared resources in a controlled manner. 
+#                         This is important because multiple threads can access the same resources, such as memory or files, and if they do so without proper synchronization, it can lead to race conditions, where the outcome of the program depends on the timing of the threads' execution. 
+#                         To prevent this, thread synchronization techniques such as locks, semaphores, and condition variables can be used to control access to shared resources and ensure that only one thread can access a resource at a time. 
+#                         This helps to ensure that the program runs correctly and produces consistent results.
+
