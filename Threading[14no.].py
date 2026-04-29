@@ -274,7 +274,36 @@ if __name__ == '__main__':
 #              The main thread can create and manage other threads, and it can also perform tasks such as handling user input, managing resources, and coordinating the execution of other threads. 
 #              The main thread is typically the first thread to be created when a Python program starts, and it continues to run until the program terminates.
 
+#(1)--------->
 import threading
 name = "Akash"
 print(f"Hello, {name} from the main thread!")
 print(threading.current_thread)
+
+#(2)------------>
+import threading
+import time
+
+def myfunction_1():
+    print("Function 1 is sorting")
+    time.sleep(2)
+    print("Function 1 is done")
+
+def myfunction_2(main_thread):
+    print("Function 2 is waiting for function 1 to complete")
+    main_thread.join()
+    print("Function 2 is starting")
+    time.sleep(2)
+    print("Function 2 is done")
+
+worker1 = threading.Thread(target= myfunction_1)
+worker2 = threading.Thread(target= myfunction_2, args= (worker1))
+
+worker1.start()
+worker2.start()
+
+for i in range(6):
+    print("Main thread is doing some work")
+
+worker1.join()
+print("Main thread is done")
