@@ -313,3 +313,28 @@ print("Main thread is done")
 #                         To prevent this, thread synchronization techniques such as locks, semaphores, and condition variables can be used to control access to shared resources and ensure that only one thread can access a resource at a time. 
 #                         This helps to ensure that the program runs correctly and produces consistent results.
 
+import threading
+counter = 10
+
+def increment(theLock, num):
+    global counter
+    for i in range(num):
+        theLock.acquire()
+        counter += 1
+        print("counter value is:", counter)
+        theLock.release()
+
+theLock = threading.Lock()
+thread1 = threading.Thread(target=increment, args=(theLock, 10))
+thread2 = threading.Thread(target=increment, args=(theLock, 20))
+thread3 = threading.Thread(target= increment, args=(theLock, 30))
+thread1.start()
+thread2.start()
+thread3.start()
+
+for i in (thread1,thread2,thread3):
+    i.join()
+
+print("counter value is:", counter)
+print("All thread are done")
+print("The final value of counter is:", counter)    
