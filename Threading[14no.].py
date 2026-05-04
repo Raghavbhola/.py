@@ -313,6 +313,7 @@ print("Main thread is done")
 #                         To prevent this, thread synchronization techniques such as locks, semaphores, and condition variables can be used to control access to shared resources and ensure that only one thread can access a resource at a time. 
 #                         This helps to ensure that the program runs correctly and produces consistent results.
 
+
 import threading
 counter = 10
 
@@ -338,3 +339,39 @@ for i in (thread1,thread2,thread3):
 print("counter value is:", counter)
 print("All thread are done")
 print("The final value of counter is:", counter)    
+
+
+import threading
+import time
+
+class MyThread(threading.Thread):
+    def __init__(self, thread_Id, name, delay):
+        threading.Thread.__init__(self)
+        self.name = name
+        self.thread_id = thread_Id
+        self.delay = delay
+
+    def run(self):
+        print(f"{self.name} is starting")
+        time.sleep(1)   # short startup delay
+        print_time(self.name, self.delay, 3)
+
+def print_time(thread_name, delay, counter):
+    while counter > 0:
+        time.sleep(delay)
+        print(f"{thread_name} : {time.ctime(time.time())}")
+        counter -= 1
+
+thread1 = MyThread(1, "Thread-1", 1)
+thread2 = MyThread(2, "Thread-2", 2)
+thread3 = MyThread(3, "Thread-3", 3)
+
+thread1.start()
+thread2.start()
+thread3.start()
+
+thread1.join()
+thread2.join()
+thread3.join()
+
+print("Exiting the Program")
