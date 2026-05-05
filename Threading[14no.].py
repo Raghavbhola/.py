@@ -375,3 +375,19 @@ thread2.join()
 thread3.join()
 
 print("Exiting the Program")
+
+#(3)------------->
+import threading
+import time
+def run():
+    thread = threading.current_thread()
+    print(f"{thread.name} is starting")                          #daemon = this is for background task
+    print(f"Daemon thread: {thread.daemon}")
+
+thread1 = threading.Thread(target= run, name= "Thread-1", daemon= True)
+thread2 = threading.Thread(target= run, name= "Thread-2", daemon= True)
+thread1.start()
+thread2.start()
+
+print("In the main thread is daemon thread?", threading.current_thread().daemon)
+time.sleep(1)
