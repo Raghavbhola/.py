@@ -313,7 +313,7 @@ print("Main thread is done")
 #                         To prevent this, thread synchronization techniques such as locks, semaphores, and condition variables can be used to control access to shared resources and ensure that only one thread can access a resource at a time. 
 #                         This helps to ensure that the program runs correctly and produces consistent results.
 
-
+#(1)-------------->
 import threading
 counter = 10
 
@@ -340,7 +340,7 @@ print("counter value is:", counter)
 print("All thread are done")
 print("The final value of counter is:", counter)    
 
-
+#(2)--------------->
 import threading
 import time
 
